@@ -1,63 +1,42 @@
-# XRPL transaction exporter [![npm version](https://badge.fury.io/js/xrpl-tx-export.svg)](https://badge.fury.io/js/xrpl-tx-export) [![](https://data.jsdelivr.com/v1/package/npm/xrpl-tx-export/badge)](https://cdn.jsdelivr.net/npm/xrpl-tx-export/dist/xrpl-tx-export.js)
+# XRPL Transaction Visualizer
 
-This small node app fetches all transactions for an account and returns the results in CSV (when called from the command line) or as a parsed object (when used as a node module).
+The XRPL Transaction Visualizer is a Node.js application designed to provide a visual representation of transaction data from the XRP Ledger (XRPL). It offers users an intuitive interface for exploring transaction activity, identifying trends, and gaining insights into their XRP Ledger transactions.
 
-Uses [xrplcluster.com](https://xrplcluster.com) full history nodes.
+## Features
 
-![](https://s3.gifyu.com/images/giff47d82669761cede.gif)
+- Fetches transaction data for a specified XRP Ledger account.
+- Visualizes transaction history in an interactive and informative manner.
+- Provides insights into transaction patterns and trends.
+- User-friendly interface for easy exploration of transaction data.
 
-### Exported columns:
+## Usage
 
-- ledger (XRPL Ledger Index)
-- direction (sent, received, other (eg. async DEX trading result))
-- txtype (XRPL Transaction Type)
-- date
-- currency (XRP or ISSUER.CURRENCY)
-- amount (amount in XRP (not drops) or IOU)
-- is_fee
-- fee (fee in XRP, chraged to own account)
-- hash
+1. Enter the XRP Ledger account for which you want to visualize transactions.
+2. Click the "Visualize Transactions" button to fetch and visualize transaction data.
+3. Explore the interactive visualization to gain insights into transaction history and patterns.
 
-# Run: commandline (to CSV)
+## Screenshots
 
-## Install
+![XRPL Txn Visualizer Screenshot]()
 
-`npm install`
+## Technologies Used
 
-If you are new to anything code / nodejs related:
+- Node.js
+- Express.js
+- XRPL API 
+- Canvas.js (for visualization)
+- HTML
+- CSS
 
-1. Install nodejs, `2:30` @ https://www.youtube.com/watch?v=9gVK6fp3UOo
-2. Download this source: https://github.com/WietseWind/xrpl-tx-exporter-csv/archive/refs/heads/main.zip
-3. Extract the ZIP and open your commandline, navigate to the folder where you extracted the ZIP
-4. Type: `npm install`
-5. Run (see below)
+## Contributing
 
-## Run
+Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
 
-`node index.js {account}`
-eg.
-`node index.js rPEPPER7kfTD9w2To4CQk6UCfuHM9c6GDY`
+## License
 
-## Store output as CSV
+This project is licensed under the [MIT License](LICENSE).
 
-`node index.js {account} > {somefile}`
-eg.
-`node index.js rPEPPER7kfTD9w2To4CQk6UCfuHM9c6GDY > export.csv`
+## Acknowledgements
 
-# Run: as a module
+Special thanks to [xrplcluster.com](https://xrplcluster.com) for providing access to full history nodes of the XRP Ledger.
 
-Import `app` and call as function.
-
-Call: `app(account, callback)`. See example use in [index.js](https://github.com/WietseWind/xrpl-tx-exporter-csv/blob/main/index.js)
-
-# Run: browser
-
-Ready to use: **[dist/index.html](https://raw.githack.com/WietseWind/xrpl-tx-exporter-csv/main/dist/index.html)**
-
-Get the browserified version from the `dist` folder, and see `run as module`.
-Ready to use: https://cdn.jsdelivr.net/npm/xrpl-tx-export/dist/xrpl-tx-export.js
-
-Sample:
-https://jsfiddle.net/WietseWind/vtL3msaw
-
-Build for the browser using `npm run build` if working from source.
